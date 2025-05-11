@@ -1,6 +1,6 @@
 // frontend/src/components/TopMappingsDisplay.tsx
 import React from 'react';
-import { TopMappingDetail, Mapping, Prediction } from '../types';
+import { TopMappingDetail, Mapping } from '../types';
 
 interface Props {
     topMappings: TopMappingDetail[];

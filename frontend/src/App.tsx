@@ -1,5 +1,5 @@
 // frontend/src/App.tsx
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import DataInputForm from './components/DataInputForm';
 import DataTable from './components/DataTable';
 import ResultsDisplay from './components/ResultsDisplay';

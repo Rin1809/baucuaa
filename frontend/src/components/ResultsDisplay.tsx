@@ -1,6 +1,6 @@
 // frontend/src/components/ResultsDisplay.tsx
 import React from 'react';
-import { CalculationResult, DetailedResultItem, Prediction, Mapping } from '../types';
+import { CalculationResult, DetailedResultItem, Mapping } from '../types';
 
 interface Props {
     results: CalculationResult | null;
