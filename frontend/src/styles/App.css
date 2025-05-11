@@ -1,0 +1,1017 @@
+/* frontend/src/styles/App.css */
+:root {
+    /* Font */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    
+    /* Base Sizes */
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --spacing-unit: 8px;
+
+    /* Light Theme (Default) */
+    --bg-primary-light: #f8f9fa; /* Main background */
+    --bg-secondary-light: #ffffff; /* Card, modal background */
+    --bg-tertiary-light: #eef2f7; /* Subtle background, like table headers or disabled states */
+    --bg-hover-light: #f1f3f5; /* Hover on list items, buttons */
+    
+    --text-primary-light: #212529; /* Main text color */
+    --text-secondary-light: #5a6169; /* Subdued text, labels */
+    --text-placeholder-light: #868e96; /* Placeholder text */
+
+    --border-primary-light: #dee2e6; /* Main borders */
+    --border-secondary-light: #ced4da; /* Input field borders */
+    --border-focus-light: #86b7fe; /* Focus ring for inputs/buttons */
+
+    --accent-color-light: #007bff; /* Primary action color */
+    --accent-color-hover-light: #0056b3; /* Hover for primary actions */
+    --accent-text-light: #ffffff; /* Text on accent background */
+
+    --danger-color-light: #dc3545;
+    --danger-color-hover-light: #c82333;
+    --danger-text-light: #ffffff;
+    --danger-bg-light: #f8d7da; /* Background for danger messages */
+    --danger-text-strong-light: #721c24; /* Text color for danger messages */
+
+    --success-color-light: #28a745;
+    --success-bg-light: #d4edda;
+    --success-text-strong-light: #155724;
+
+    --warning-color-light: #ffc107;
+    --warning-bg-light: #fff3cd;
+    --warning-text-strong-light: #856404;
+    
+    --info-bg-light: #e6f7ff;
+    --info-border-light: #91d5ff;
+    --info-text-strong-light: #096dd9;
+
+    --shadow-xs-light: 0 1px 2px rgba(0, 0, 0, 0.03);
+    --shadow-sm-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md-light: 0 4px 8px rgba(0, 0, 0, 0.07);
+    --shadow-lg-light: 0 10px 20px rgba(0, 0, 0, 0.07);
+    --shadow-focus-light: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+
+
+    /* Dark Theme */
+    --bg-primary-dark: #121212;
+    --bg-secondary-dark: #1e1e1e;
+    --bg-tertiary-dark: #2a2a2a;
+    --bg-hover-dark: #333333;
+    
+    --text-primary-dark: #e0e0e0;
+    --text-secondary-dark: #a0a0a0;
+    --text-placeholder-dark: #757575;
+
+    --border-primary-dark: #3a3a3a;
+    --border-secondary-dark: #4a4a4a;
+    --border-focus-dark: #0d6efd; /* Brighter focus for dark mode */
+
+    --accent-color-dark: #0d6efd; /* A slightly brighter blue for dark mode */
+    --accent-color-hover-dark: #0b5ed7;
+    --accent-text-dark: #ffffff;
+
+    --danger-color-dark: #e63946; /* Vivid red for dark mode */
+    --danger-color-hover-dark: #d90429;
+    --danger-text-dark: #ffffff;
+    --danger-bg-dark: #4d1d21; /* Darker red background */
+    --danger-text-strong-dark: #f1aeb5; /* Lighter red text for contrast */
+    
+    --success-color-dark: #34c759; /* Vivid green */
+    --success-bg-dark: #1c3c27;
+    --success-text-strong-dark: #a3e6be;
+
+    --warning-color-dark: #ffcc00; /* Vivid yellow */
+    --warning-bg-dark: #4d3a11;
+    --warning-text-strong-dark: #ffeca9;
+
+    --info-bg-dark: #1c293f;
+    --info-border-dark: #0d6efd;
+    --info-text-strong-dark: #79c0ff;
+    
+    --shadow-xs-dark: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-sm-dark: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md-dark: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --shadow-lg-dark: 0 10px 20px rgba(0, 0, 0, 0.4);
+    --shadow-focus-dark: 0 0 0 0.2rem rgba(13, 110, 253, 0.35);
+
+    /* Default to light theme variables */
+    --bg-primary: var(--bg-primary-light);
+    --bg-secondary: var(--bg-secondary-light);
+    --bg-tertiary: var(--bg-tertiary-light);
+    --bg-hover: var(--bg-hover-light);
+    --text-primary: var(--text-primary-light);
+    --text-secondary: var(--text-secondary-light);
+    --text-placeholder: var(--text-placeholder-light);
+    --border-primary: var(--border-primary-light);
+    --border-secondary: var(--border-secondary-light);
+    --border-focus: var(--border-focus-light);
+    --accent-color: var(--accent-color-light);
+    --accent-color-hover: var(--accent-color-hover-light);
+    --accent-text: var(--accent-text-light);
+    --danger-color: var(--danger-color-light);
+    --danger-color-hover: var(--danger-color-hover-light);
+    --danger-text: var(--danger-text-light);
+    --danger-bg: var(--danger-bg-light);
+    --danger-text-strong: var(--danger-text-strong-light);
+    --success-color: var(--success-color-light);
+    --success-bg: var(--success-bg-light);
+    --success-text-strong: var(--success-text-strong-light);
+    --warning-color: var(--warning-color-light);
+    --warning-bg: var(--warning-bg-light);
+    --warning-text-strong: var(--warning-text-strong-light);
+    --info-bg: var(--info-bg-light);
+    --info-border: var(--info-border-light);
+    --info-text-strong: var(--info-text-strong-light);
+    --shadow-xs: var(--shadow-xs-light);
+    --shadow-sm: var(--shadow-sm-light);
+    --shadow-md: var(--shadow-md-light);
+    --shadow-lg: var(--shadow-lg-light);
+    --shadow-focus: var(--shadow-focus-light);
+
+    --transition-speed: 0.2s ease-in-out;
+}
+
+.dark-mode {
+    --bg-primary: var(--bg-primary-dark);
+    --bg-secondary: var(--bg-secondary-dark);
+    --bg-tertiary: var(--bg-tertiary-dark);
+    --bg-hover: var(--bg-hover-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --text-placeholder: var(--text-placeholder-dark);
+    --border-primary: var(--border-primary-dark);
+    --border-secondary: var(--border-secondary-dark);
+    --border-focus: var(--border-focus-dark);
+    --accent-color: var(--accent-color-dark);
+    --accent-color-hover: var(--accent-color-hover-dark);
+    --accent-text: var(--accent-text-dark);
+    --danger-color: var(--danger-color-dark);
+    --danger-color-hover: var(--danger-color-hover-dark);
+    --danger-text: var(--danger-text-dark);
+    --danger-bg: var(--danger-bg-dark);
+    --danger-text-strong: var(--danger-text-strong-dark);
+    --success-color: var(--success-color-dark);
+    --success-bg: var(--success-bg-dark);
+    --success-text-strong: var(--success-text-strong-dark);
+    --warning-color: var(--warning-color-dark);
+    --warning-bg: var(--warning-bg-dark);
+    --warning-text-strong: var(--warning-text-strong-dark);
+    --info-bg: var(--info-bg-dark);
+    --info-border: var(--info-border-dark);
+    --info-text-strong: var(--info-text-strong-dark);
+    --shadow-xs: var(--shadow-xs-dark);
+    --shadow-sm: var(--shadow-sm-dark);
+    --shadow-md: var(--shadow-md-dark);
+    --shadow-lg: var(--shadow-lg-dark);
+    --shadow-focus: var(--shadow-focus-dark);
+}
+
+/* Global Resets and Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--font-size-base); /* Or use 62.5% for 1rem = 10px, but 16px base is fine */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: var(--line-height-base);
+    margin: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+}
+
+/* Layout */
+.container {
+    width: 100%; /* Take full width */
+    max-width: 1400px; /* Max container width */
+    margin: 0 auto;
+    padding: calc(var(--spacing-unit) * 2) var(--spacing-unit); /* Responsive padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.app-title { /* Added a class for the title if you want one */
+    font-size: 1.8em; /* Relative to body font size */
+    font-weight: 700;
+    text-align: center;
+    margin-top: calc(var(--spacing-unit) * 3);
+    margin-bottom: calc(var(--spacing-unit) * 3); /* More space */
+    color: var(--accent-color);
+    letter-spacing: -0.5px;
+    word-wrap: break-word;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: calc(var(--spacing-unit) * 2.5); /* Consistent gap */
+}
+
+/* Larger screen layouts */
+@media (min-width: 768px) {
+    .container {
+        padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 2); /* More padding on larger screens */
+    }
+    .app-title {
+        font-size: 2.25em;
+        margin-top: calc(var(--spacing-unit) * 4);
+        margin-bottom: calc(var(--spacing-unit) * 4);
+    }
+    .main-content {
+        gap: calc(var(--spacing-unit) * 3);
+    }
+}
+
+@media (min-width: 992px) { /* Common breakpoint for larger layouts */
+    .container {
+        padding: calc(var(--spacing-unit) * 3);
+    }
+    .main-content {
+        grid-template-columns: minmax(350px, 1.2fr) 2fr; /* Two columns, first is flexible but has min width */
+        gap: calc(var(--spacing-unit) * 4);
+    }
+    .app-title {
+        font-size: 2.75em;
+        margin-top: calc(var(--spacing-unit) * 5);
+        margin-bottom: calc(var(--spacing-unit) * 5);
+    }
+}
+
+
+/* Section and Card Styling */
+.data-management, .results-section {
+    background-color: var(--bg-secondary);
+    padding: calc(var(--spacing-unit) * 2); /* Default padding */
+    border-radius: var(--border-radius-lg); /* Softer radius */
+    box-shadow: var(--shadow-md);
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+    overflow: hidden;
+}
+@media (min-width: 768px) {
+    .data-management, .results-section {
+        padding: calc(var(--spacing-unit) * 3); /* Increased padding for larger screens */
+    }
+}
+
+h3, h4 { /* Section headings */
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: calc(var(--spacing-unit) * 1.5); /* Spacing after heading */
+    font-weight: 600;
+    padding-bottom: calc(var(--spacing-unit) * 0.5); /* Space before border */
+    border-bottom: 1px solid var(--border-primary);
+    word-wrap: break-word; /* Prevent overflow */
+}
+h3 { font-size: 1.3em; } /* Relative sizing */
+h4 { font-size: 1.15em; }
+
+@media (min-width: 768px) {
+    h3, h4 {
+        margin-bottom: calc(var(--spacing-unit) * 2);
+        padding-bottom: calc(var(--spacing-unit) * 0.75);
+    }
+    h3 { font-size: 1.5em; }
+    h4 { font-size: 1.25em; }
+}
+
+
+/* Data Input Form (Chips version) */
+.data-input-form-chips {
+    margin-bottom: calc(var(--spacing-unit) * 2.5);
+    padding: 0; /* Form itself doesn't need padding if its parent section has it */
+    border: none;
+    background-color: transparent; /* Inherit from parent or be transparent */
+    box-shadow: none;
+}
+
+.data-input-form-chips .form-section {
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.data-input-form-chips label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.9em; /* Slightly smaller */
+    margin-bottom: calc(var(--spacing-unit) * 0.75);
+    color: var(--text-secondary);
+}
+
+.slots-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 slots per row */
+    gap: calc(var(--spacing-unit) * 0.75); /* Small gap */
+    margin-bottom: var(--spacing-unit);
+    max-width: 100%; /* Ensure it doesn't overflow */
+}
+
+.slot {
+    height: 44px; /* Consistent height */
+    border: 2px dashed var(--border-secondary);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600; /* Bolder text for selected */
+    font-size: 0.95em; /* Slightly smaller font for slots */
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    background-color: var(--bg-tertiary);
+    color: var(--text-placeholder);
+    text-transform: capitalize;
+    min-width: 0; /* For flex/grid item to shrink properly */
+    overflow: hidden; /* Prevent content spill */
+    text-overflow: ellipsis; /* Show ... if text is too long */
+    white-space: nowrap; /* Keep text on one line */
+}
+
+.slot.filled {
+    border-style: solid;
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    color: var(--accent-text);
+    box-shadow: var(--shadow-xs);
+}
+.slot:not(.filled):hover {
+    border-color: var(--accent-color);
+    background-color: var(--bg-hover);
+}
+.slot.filled:hover {
+    background-color: var(--accent-color-hover);
+    border-color: var(--accent-color-hover);
+    transform: scale(1.03);
+}
+
+.animal-chips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Responsive chips */
+    gap: calc(var(--spacing-unit) * 0.75);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    max-width: 100%;
+}
+
+.animal-chip {
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 0.5); /* Adjust padding */
+    font-size: 0.85em; /* Smaller font for chips */
+    font-weight: 500;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    box-shadow: var(--shadow-xs);
+    text-align: center;
+    min-height: 40px; /* Ensure chips have enough height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-word; /* Allow long animal names to wrap if needed, though abbreviations are short */
+    white-space: normal; /* Allow wrapping */
+    hyphens: auto; /* Better word breaking if necessary */
+}
+
+.animal-chip:hover {
+    background-color: var(--bg-hover);
+    border-color: var(--border-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+.animal-chip:active {
+    transform: translateY(0);
+    background-color: var(--border-primary);
+}
+
+
+/* Unified Action Buttons */
+.unified-actions {
+    margin-top: calc(var(--spacing-unit) * 2);
+    display: flex;
+    gap: calc(var(--spacing-unit) * 1); /* Reduced gap for mobile */
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    justify-content: flex-start; /* Align to start on mobile, can change for larger screens */
+    align-items: center; /* Align items vertically */
+}
+
+.modern-action-button {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-secondary);
+    box-shadow: none;
+    padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 1.25); /* Responsive padding */
+    font-weight: 500;
+    font-size: 0.85rem; /* Smaller font for mobile */
+    border-radius: var(--border-radius-md);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed), color var(--transition-speed), opacity var(--transition-speed);
+    
+    flex-grow: 1; /* Allow buttons to grow and fill space */
+    flex-shrink: 1;
+    flex-basis: calc(50% - (var(--spacing-unit) * 0.5)); /* Aim for 2 buttons per row, accounting for gap */
+    /* For more content-aware sizing: */
+    /* flex-basis: auto; */
+    /* min-width: 120px; /* Ensure buttons aren't too small */
+
+    display: inline-flex; /* For icon alignment */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* On medium screens, aim for 4 buttons or allow them to size based on content */
+@media (min-width: 600px) {
+    .modern-action-button {
+        flex-basis: calc(25% - (var(--spacing-unit) * 0.75)); /* Aim for 4 buttons per row */
+        /* Or if using flex-basis: auto: */
+        /* flex-basis: auto; */
+        /* min-width: 120px; */
+         font-size: 0.9rem;
+         padding: calc(var(--spacing-unit) * 1.1) calc(var(--spacing-unit) * 1.5);
+    }
+    .unified-actions {
+       gap: calc(var(--spacing-unit) * 1.25);
+    }
+}
+/* On larger screens, buttons might not need to grow as much */
+@media (min-width: 992px) {
+    .modern-action-button {
+        flex-grow: 0; /* Don't grow excessively */
+        flex-basis: auto; /* Size based on content */
+        min-width: 150px; /* Ensure a good minimum width */
+    }
+}
+
+
+.modern-action-button .button-icon {
+    margin-right: calc(var(--spacing-unit) * 0.5);
+    font-size: 1em; /* Icon size relative to button font */
+    line-height: 1; /* Prevent extra space from icon line height */
+}
+
+.modern-action-button:hover:not(:disabled) {
+    border-color: var(--accent-color);
+    background-color: var(--bg-hover); /* Subtle hover */
+    color: var(--accent-color); /* Text color changes to accent on hover */
+    transform: none; /* Reset any previous transform */
+    box-shadow: none; /* No extra shadow on hover unless desired */
+}
+
+.modern-action-button:disabled {
+    background-color: var(--bg-secondary) !important; /* Ensure override */
+    color: var(--text-placeholder) !important;
+    border-color: var(--border-secondary) !important;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.modern-action-button:disabled .button-spinner { /* Spinner color for disabled state */
+    border-top-color: var(--text-placeholder);
+    border-right-color: var(--text-placeholder);
+    border-left-color: var(--text-placeholder);
+    border-bottom-color: transparent;
+}
+
+
+.modern-action-button.secondary {
+    color: var(--text-secondary);
+    border-color: var(--border-secondary);
+}
+.modern-action-button.secondary:hover:not(:disabled) {
+    color: var(--text-primary);
+    border-color: var(--border-primary);
+    background-color: var(--bg-hover);
+}
+.modern-action-button.secondary .button-icon {
+    color: var(--text-secondary);
+}
+.modern-action-button.secondary:hover:not(:disabled) .button-icon {
+    color: var(--text-primary);
+}
+
+
+.modern-action-button.danger {
+    color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+.modern-action-button.danger:hover:not(:disabled) {
+    background-color: var(--danger-bg); /* Use the lighter danger background for hover */
+    color: var(--danger-text-strong); /* Use the stronger text for contrast */
+    border-color: var(--danger-color); /* Keep border color consistent or slightly darker if preferred */
+}
+.modern-action-button.danger .button-icon {
+    color: var(--danger-color);
+}
+.modern-action-button.danger:hover:not(:disabled) .button-icon {
+     color: var(--danger-text-strong);
+}
+
+
+.button-spinner {
+    display: inline-block;
+    width: 1em; /* Relative to font size */
+    height: 1em; /* Relative to font size */
+    border: 2px solid currentColor; /* Spinner color matches text color */
+    border-bottom-color: transparent; /* One side transparent for spin effect */
+    border-radius: 50%;
+    animation: spin 0.75s linear infinite;
+    box-sizing: border-box;
+    margin-right: calc(var(--spacing-unit) * 0.75);
+}
+/* Specific spinner colors if needed, or rely on currentColor */
+.modern-action-button .button-spinner { /* Default spinner (e.g., for Calculate button) */
+    border-top-color: var(--accent-color);
+    border-right-color: var(--accent-color);
+    border-left-color: var(--accent-color);
+}
+.modern-action-button.danger .button-spinner {
+    border-top-color: var(--danger-color);
+    border-right-color: var(--danger-color);
+    border-left-color: var(--danger-color);
+}
+
+
+/* Data Table */
+.data-table-container {
+    margin-top: calc(var(--spacing-unit) * 2.5);
+    width: 100%; /* Ensure it takes full width of its container */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.data-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-unit);
+    padding-bottom: calc(var(--spacing-unit) * 0.5); /* Space for border */
+    border-bottom: 1px solid var(--border-primary); /* Separator line */
+}
+
+.data-table-header h4 {
+    margin: 0; /* Remove default h4 margin */
+    border-bottom: none; /* Remove h4's own border */
+    padding-bottom: 0; /* Remove h4's own padding */
+}
+
+.toggle-button.subtle { /* For "Ẩn/Hiện Lịch Sử" */
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: calc(var(--spacing-unit) * 0.6) var(--spacing-unit);
+    font-size: 0.75em; /* Smaller text */
+    box-shadow: none;
+    min-height: auto;
+    border-radius: var(--border-radius-sm);
+    min-width: 100px;
+    text-align: center;
+}
+.toggle-button.subtle:hover {
+    background-color: var(--accent-color-light); /* Consistent light theme hover for this button type */
+    border-color: var(--accent-color-light);
+    color: var(--accent-text-light);
+    transform: none; /* No scale or move for subtle buttons */
+}
+.dark-mode .toggle-button.subtle:hover { /* Dark mode specific hover */
+    background-color: var(--accent-color-dark);
+    border-color: var(--accent-color-dark);
+    color: var(--accent-text-dark);
+}
+
+
+.table-scroll-wrapper { /* For history table */
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-md); /* Rounded corners for the table wrapper */
+    background-color: var(--bg-secondary); /* Table background */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.detailed-results-table { /* For results table */
+    margin-top: calc(var(--spacing-unit) * 2.5);
+    overflow-x: auto; /* Allow horizontal scrolling */
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-md); /* Rounded corners */
+    background-color: var(--bg-secondary); /* Table background */
+    -webkit-overflow-scrolling: touch;
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%; /* Table takes full width of its scroll wrapper */
+    border-collapse: collapse;
+    table-layout: auto; /* Let browser decide column widths, or 'fixed' for performance on large tables */
+}
+
+th, td {
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 1.25); /* Cell padding */
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping in cells, good for this data type */
+    font-size: 0.85em; /* Base font size for table content */
+    border-bottom: 1px solid var(--border-primary);
+}
+th {
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8em; /* Slightly smaller for headers */
+    letter-spacing: 0.5px;
+    border-bottom-width: 2px; /* Thicker border for header */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+td {
+    color: var(--text-primary);
+}
+tr:last-child td {
+    border-bottom: none; /* No border for the last row */
+}
+tr:hover td {
+    background-color: var(--bg-hover);
+}
+
+@media (min-width: 768px) {
+    th, td {
+        padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 1.5);
+        font-size: 0.9em;
+    }
+    th {
+        font-size: 0.85em;
+    }
+}
+
+/* Row Highlighting in Results Table */
+tr.correct td {
+    background-color: var(--success-bg) !important; /* Use !important to override hover if needed */
+    color: var(--success-text-strong) !important;
+}
+tr.incorrect td {
+    background-color: var(--danger-bg) !important; /* Use !important to override hover if needed */
+    color: var(--danger-text-strong) !important;
+}
+
+/* Animation for History Table and Preview */
+.history-table-animated-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.05s, /* Delay opacity slightly */
+                transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: max-height, opacity, transform; /* Hint for browser optimization */
+}
+
+.history-table-animated-content.is-open {
+    max-height: 400px; /* Adjust as needed, should be enough for ~10-15 rows */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.latest-van-sau-preview {
+    display: block;
+    padding: 0 var(--spacing-unit); /* Horizontal padding */
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: var(--bg-tertiary);
+    border-radius: var(--border-radius-md);
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    text-align: center;
+    border: 1px dashed var(--border-secondary);
+    
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                margin-top 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                padding-top 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                padding-bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, max-height, transform, margin-top, padding;
+    padding-top: 0; /* Start with no vertical padding */
+    padding-bottom: 0;
+}
+
+.latest-van-sau-preview.is-visible {
+    opacity: 1;
+    max-height: 100px; /* Ample height for one line of text */
+    transform: translateY(0);
+    margin-top: var(--spacing-unit); /* Add margin when visible */
+    padding-top: var(--spacing-unit); /* Add vertical padding when visible */
+    padding-bottom: var(--spacing-unit);
+}
+.latest-van-sau-preview.is-hidden { /* Ensure smooth transition out */
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.latest-van-sau-preview strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+
+/* Results Display */
+.results-display .summary {
+    margin-bottom: calc(var(--spacing-unit) * 2.5);
+    padding: calc(var(--spacing-unit) * 1.75); /* Generous padding */
+    background-color: var(--bg-tertiary);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-xs);
+}
+.results-display .summary p,
+.results-display .prediction p,
+.top-mappings-display .mapping-card p {
+    margin: calc(var(--spacing-unit) * 0.75) 0; /* Consistent paragraph spacing */
+    font-size: 0.9em; /* Standard text size */
+    line-height: 1.5;
+    word-break: break-word; /* Allow long strings (like mapping) to wrap */
+    white-space: normal;
+}
+.results-display .summary strong,
+.results-display .prediction strong,
+.top-mappings-display .mapping-card strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+    .results-display .summary p,
+    .results-display .prediction p,
+    .top-mappings-display .mapping-card p {
+        font-size: 0.95em;
+    }
+}
+
+.perfect-match {
+    color: var(--success-color); /* Use success color from theme */
+    font-weight: 700;
+    font-size: 1.05em; /* Slightly larger */
+    animation: pulseColor 1.8s infinite ease-in-out;
+}
+
+.next-prediction {
+    background-color: var(--info-bg);
+    border: 1px solid var(--info-border);
+    padding: calc(var(--spacing-unit) * 1.75);
+    border-radius: var(--border-radius-md);
+    margin-top: calc(var(--spacing-unit) * 2.5);
+    box-shadow: var(--shadow-sm);
+}
+.next-prediction h4 {
+    margin-top: 0;
+    color: var(--info-text-strong);
+    font-size: 1.1em; /* Slightly larger for emphasis */
+    border-bottom-color: var(--info-border);
+}
+
+.animal-icon {
+    width: 24px; /* Standard size for icons in text */
+    height: 24px;
+    vertical-align: middle;
+    margin-left: calc(var(--spacing-unit) * 0.75);
+    transition: transform 0.2s ease-in-out;
+    border-radius: var(--border-radius-sm); /* Optional: slight rounding for icons */
+}
+.next-prediction strong:hover .animal-icon,
+.animal-stats li:hover .animal-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+.animal-icon-small {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-left: calc(var(--spacing-unit) * 0.5);
+    border-radius: var(--border-radius-sm);
+}
+
+.top-mappings-display {
+    margin-top: calc(var(--spacing-unit) * 3); /* Good separation */
+}
+.mappings-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: calc(var(--spacing-unit) * 1.5); /* Gap between cards */
+    max-width: 100%;
+}
+@media (min-width: 500px) { /* Start showing multiple columns */
+    .mappings-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+    }
+}
+@media (min-width: 768px) {
+     .mappings-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Adjust minmax for larger screens */
+    }
+}
+
+.mapping-card {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    padding: calc(var(--spacing-unit) * 1.5);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    overflow: hidden; /* Ensure content fits */
+}
+.mapping-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+.mapping-card .prediction {
+    margin-top: var(--spacing-unit); /* Space above prediction within card */
+    padding-top: var(--spacing-unit); /* Space before border */
+    border-top: 1px dashed var(--border-secondary);
+}
+
+.animal-stats {
+    margin-top: calc(var(--spacing-unit) * 2.5);
+    padding: calc(var(--spacing-unit) * 1.75);
+    background-color: var(--warning-bg);
+    border: 1px solid var(--warning-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+.animal-stats h4 {
+    color: var(--warning-text-strong);
+    margin-top: 0;
+    border-bottom-color: var(--warning-color);
+}
+.animal-stats ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.animal-stats li {
+    margin-bottom: calc(var(--spacing-unit) * 0.75);
+    font-size: 0.9em; /* Standard list item size */
+    display: flex; /* For aligning icon and text */
+    align-items: center;
+}
+
+/* Utility Classes: Loading, Error, Info Messages */
+.loading-spinner, .error-message, .info-message {
+    text-align: center;
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 1.5); /* Consistent padding */
+    margin: calc(var(--spacing-unit) * 1.5) 0; /* Consistent margin */
+    border-radius: var(--border-radius-md);
+    animation: fadeIn 0.4s ease-out;
+    font-size: 0.9em; /* Standard message font size */
+    word-wrap: break-word; /* Prevent overflow */
+    max-width: 100%; /* Ensure it fits container */
+    box-sizing: border-box;
+}
+
+.loading-spinner {
+    color: var(--accent-color);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-secondary);
+}
+.loading-spinner:before {
+    content: '⏳'; /* Or a CSS spinner */
+    display: inline-block;
+    animation: spin 1.2s linear infinite;
+    margin-right: calc(var(--spacing-unit) * 0.75);
+    font-size: 1.1em; /* Make emoji slightly larger */
+}
+.loading-spinner.full-page-spinner {
+    display: flex;
+    flex-direction: column; /* Stack emoji and text */
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Take up most of the viewport */
+    font-size: 1.1em; /* Larger text for full page */
+    color: var(--accent-color);
+    background-color: transparent; /* No background for full page */
+    border: none;
+}
+.loading-spinner.full-page-spinner:before {
+    font-size: 2em; /* Larger emoji */
+    margin-bottom: var(--spacing-unit); /* Space between emoji and text */
+}
+
+.error-message {
+    background-color: var(--danger-bg); /* Use theme variable */
+    color: var(--danger-text-strong);
+    border: 1px solid var(--danger-color);
+}
+
+.info-message {
+    background-color: var(--info-bg);
+    color: var(--info-text-strong);
+    border: 1px solid var(--info-border);
+}
+.data-table-container .info-message { /* If info message is inside data table (e.g., "No data") */
+    margin-top: 0; /* Remove top margin if it's the first child */
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes pulseColor {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.03); }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: calc(var(--spacing-unit) * 3);
+    padding: calc(var(--spacing-unit) * 2) 0;
+    border-top: 1px solid var(--border-primary);
+    color: var(--text-secondary);
+    font-size: 0.85em; /* Smaller footer text */
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: var(--spacing-unit); /* Ensure padding is included */
+    padding-right: var(--spacing-unit);
+}
+
+/* Details/Summary Styling (for prediction breakdown) */
+details {
+    margin-top: var(--spacing-unit); /* Space above details block */
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--border-radius-md);
+    padding: calc(var(--spacing-unit) * 0.75) var(--spacing-unit); /* Inner padding */
+    box-shadow: var(--shadow-xs);
+}
+summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-primary); /* Or accent color if preferred */
+    padding: calc(var(--spacing-unit) * 0.5) 0; /* Vertical padding for summary */
+    display: block; /* To allow full-width click */
+    position: relative; /* For pseudo-element positioning */
+}
+summary::before { /* Custom marker */
+    content: '▶';
+    font-size: 0.6em; /* Smaller marker */
+    margin-right: calc(var(--spacing-unit) * 0.75);
+    display: inline-block;
+    transition: transform 0.2s;
+    position: relative;
+    top: -1px; /* Fine-tune vertical alignment */
+}
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+details[open] summary {
+    margin-bottom: calc(var(--spacing-unit) * 0.75); /* Space between summary and content when open */
+}
+details > *:not(summary) { /* Content inside details */
+    font-size: 0.85em; /* Smaller text for details */
+    padding-left: calc(var(--spacing-unit) * 2); /* Indent content */
+    color: var(--text-secondary); /* Subdued text */
+    word-break: break-word; /* Allow wrapping */
+    white-space: normal;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-container {
+    position: fixed;
+    top: calc(var(--spacing-unit) * 1.5); /* Position from top-right */
+    right: calc(var(--spacing-unit) * 1.5);
+    z-index: 1000; /* Ensure it's above other content */
+}
+.theme-toggle-button { /* Keep your emoji or use SVG/icon font */
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: calc(var(--spacing-unit) * 0.75); /* Adjust padding for icon size */
+    font-size: 1.4rem; /* Size of the emoji/icon */
+    box-shadow: var(--shadow-md);
+    border-radius: 50%; /* Circular button */
+    width: 40px; /* Fixed size */
+    height: 40px;
+    border: 1px solid var(--border-secondary);
+    display: flex; /* Center the icon */
+    align-items: center;
+    justify-content: center;
+    line-height: 1; /* Remove extra line height from emoji */
+}
+.theme-toggle-button:hover {
+    background-color: var(--bg-tertiary); /* Subtle hover */
+    border-color: var(--border-primary);
+    transform: scale(1.1) rotate(15deg); /* Fun hover effect */
+    box-shadow: var(--shadow-lg);
+}
