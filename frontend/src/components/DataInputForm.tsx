@@ -97,7 +97,7 @@ const DataInputForm: React.FC<Props> = ({
 
     return (
         <form onSubmit={handleSubmit} className="data-input-form-chips">
-            <h4>Thêm Dữ Liệu Lịch Sử</h4> {/* Tiêu đề rõ ràng hơn */}
+            <h4>Thêm Dữ Liệu Lịch Sử</h4> 
             
             <div className="form-section">
                 <label>Ván Trước (3 con xuất hiện):</label>
@@ -128,7 +128,7 @@ const DataInputForm: React.FC<Props> = ({
                     type="submit" 
                     title={!allInputsFilled ? "Vui lòng điền đủ các ô" : "Thêm Ván Mới vào Lịch Sử"} 
                     aria-label="Thêm Ván Mới"
-                    className="button-with-icon modern-action-button" // Primary button
+                    className="button-with-icon modern-action-button"
                     disabled={isProcessing || !allInputsFilled}
                 >
                     <span role="img" aria-hidden="true" className="button-icon">➕</span>
@@ -151,7 +151,7 @@ const DataInputForm: React.FC<Props> = ({
                     disabled={isProcessing || !hasData}
                     title={isProcessing ? "Đang xử lý..." : (!hasData ? "Chưa có dữ liệu để tính toán" : "Bắt đầu phân tích dữ liệu")}
                     aria-label={isProcessing ? "Đang xử lý" : "Bắt đầu tính toán"}
-                    className="button-with-icon modern-action-button" // Primary button
+                    className="button-with-icon modern-action-button" 
                 >
                     {isProcessing ? ( 
                         <>

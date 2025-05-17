@@ -10,10 +10,7 @@ interface Props {
 }
 
 const DataTable: React.FC<Props> = ({ data, isOpen, onToggle, latestVanSau }) => {
-    // Không cần check data null vì App.tsx sẽ hiển thị loading spinner toàn trang
-    // if (!data) { 
-    //     return <p className="info-message">Đang tải dữ liệu...</p>;
-    // }
+
 
     const hasData = data.length > 0;
 
@@ -28,7 +25,6 @@ const DataTable: React.FC<Props> = ({ data, isOpen, onToggle, latestVanSau }) =>
                 )}
             </div>
 
-            {/* Wrapper for animated table content */}
             {hasData && (
                 <div className={`history-table-animated-content ${isOpen ? 'is-open' : 'is-closed'}`}>
                     <div className="table-scroll-wrapper">
@@ -44,8 +40,8 @@ const DataTable: React.FC<Props> = ({ data, isOpen, onToggle, latestVanSau }) =>
                                 {data.map((entry, index) => (
                                     <tr key={index}>
                                         <td>{index + 1}</td>
-                                        <td>{entry[0].toUpperCase()}</td> {/* In hoa cho dễ nhìn */}
-                                        <td>{entry[1].toUpperCase()}</td> {/* In hoa cho dễ nhìn */}
+                                        <td>{entry[0].toUpperCase()}</td>
+                                        <td>{entry[1].toUpperCase()}</td> 
                                     </tr>
                                 ))}
                             </tbody>
@@ -54,7 +50,6 @@ const DataTable: React.FC<Props> = ({ data, isOpen, onToggle, latestVanSau }) =>
                 </div>
             )}
 
-            {/* Animated Preview, shown when table is closed and there's data */}
             {hasData && latestVanSau && (
                  <div className={`latest-van-sau-preview ${!isOpen ? 'is-visible' : 'is-hidden'}`}>
                     <span>Ván sau của lượt đấu mới nhất: </span>

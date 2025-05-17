@@ -23,7 +23,7 @@ const renderAnimalImage = (animal: string | undefined) => {
 
 const TopMappingsDisplay: React.FC<Props> = ({ topMappings, totalDataCount }) => {
     if (!topMappings || topMappings.length === 0) {
-        return null; // Không hiển thị gì nếu không có top mappings
+        return null; 
     }
 
     return (
@@ -36,7 +36,7 @@ const TopMappingsDisplay: React.FC<Props> = ({ topMappings, totalDataCount }) =>
                         <p>Mapping: {formatMapping(tm.mapping)}</p>
                         <p>Lô: {tm.lo}</p>
                         {tm.prediction && (
-                            <div className="prediction"> {/* Re-use prediction class for consistency if desired */}
+                            <div className="prediction">
                                 <p>Nếu ván hiện tại là: <strong>{tm.prediction.van_sau.toUpperCase()}</strong></p>
                                 <p>
                                     Dự đoán: <strong>{tm.prediction.predicted_animal.toUpperCase()} {renderAnimalImage(tm.prediction.predicted_animal)}</strong> (Giá trị: {tm.prediction.result_value})

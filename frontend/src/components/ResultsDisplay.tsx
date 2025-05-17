@@ -22,9 +22,8 @@ const renderAnimalImage = (animal: string | undefined) => {
 
 const ResultsDisplay: React.FC<Props> = ({ results }) => {
     if (!results) return null;
-    // Message từ backend (ví dụ: không có data để tính) đã được xử lý ở App.tsx
-    // if (results.message && results.total_data_count === 0) return <p className="info-message">{results.message}</p>;
-    if (results.total_data_count === 0 && !results.message) return null; // Không hiển thị gì nếu không có data và không có message
+
+    if (results.total_data_count === 0 && !results.message) return null; 
 
 
     return (
@@ -69,7 +68,7 @@ const ResultsDisplay: React.FC<Props> = ({ results }) => {
                     <h4>Thống Kê Dự Đoán (từ các mapping cùng tỷ lệ đúng cao nhất):</h4>
                     <ul>
                     {Object.entries(results.animal_counts)
-                        .filter(([, count]) => count > 0) // Chỉ hiển thị nếu count > 0
+                        .filter(([, count]) => count > 0) 
                         .sort(([, countA], [, countB]) => countB - countA) 
                         .map(([animal, count]) => (
                         <li key={animal}>
@@ -82,7 +81,7 @@ const ResultsDisplay: React.FC<Props> = ({ results }) => {
 
 
             {results.detailed_results && results.detailed_results.length > 0 && (
-                <div className="detailed-results-table"> {/* Added this wrapper */}
+                <div className="detailed-results-table"> 
                     <h4>Chi Tiết Từng Ván (với mapping tốt nhất)</h4>
                     <table>
                         <thead>

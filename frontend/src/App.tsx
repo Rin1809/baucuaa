@@ -6,7 +6,7 @@ import ResultsDisplay from './components/ResultsDisplay';
 import TopMappingsDisplay from './components/TopMappingsDisplay';
 import { fetchData, addDataEntry, deleteAllData, calculateResults } from './services/apiService';
 import { VanEntry, CalculationResult } from './types';
-import './styles/App.css'; // Đảm bảo file CSS được import
+import './styles/App.css'; 
 
 type Theme = 'light' | 'dark';
 
@@ -60,11 +60,7 @@ function App() {
         try {
             await addDataEntry(van_truoc, van_sau);
             await loadInitialData(); 
-            // Optional: Tự động tính toán lại sau khi thêm dữ liệu mới nếu có dữ liệu
-            // if (inputData.length + 1 > 0) { // Kiểm tra độ dài mới (sau khi loadInitialData)
-            //    const results = await calculateResults();
-            //    setCalculationResult(results);
-            // }
+
         } catch (err: any) {
             setError(`Lỗi khi thêm dữ liệu: ${err.response?.data?.message || err.message || 'Lỗi không xác định'}`);
             console.error("Add data error:", err);
@@ -101,7 +97,7 @@ function App() {
             const results = await calculateResults();
             setCalculationResult(results);
             if (results.message && results.total_data_count === 0) {
-                // Xử lý thông báo từ backend nếu không có dữ liệu để tính (ví dụ: hiển thị cho người dùng)
+
                 console.log("Calculation message from backend:", results.message);
             }
         } catch (err: any) {
@@ -137,7 +133,7 @@ function App() {
                         onAddData={handleAddData}
                         onCalculate={handleCalculate}
                         onDeleteAll={handleDeleteAll}
-                        isProcessing={isLoading} // Chỉ truyền `isLoading` cho form
+                        isProcessing={isLoading}
                         hasData={inputData.length > 0}
                     />
                     <DataTable 
@@ -149,10 +145,8 @@ function App() {
                 </section>
 
                 <section className="results-section">
-                    {/* Hiển thị loading cho việc tính toán */}
                     {isLoading && !isLoadingData && <div className="loading-spinner">Đang phân tích kết quả...</div>}
                     
-                    {/* Chỉ hiển thị kết quả nếu không loading và có calculationResult */}
                     {!isLoading && calculationResult && calculationResult.total_data_count > 0 && (
                         <>
                             <ResultsDisplay results={calculationResult} />
@@ -164,15 +158,12 @@ function App() {
                             )}
                         </>
                     )}
-                    {/* Hiển thị thông báo từ backend nếu không có data để tính */}
                     {!isLoading && calculationResult && calculationResult.message && calculationResult.total_data_count === 0 && (
                          <p className="info-message">{calculationResult.message}</p>
                     )}
-                     {/* Thông báo khi chưa tính toán nhưng có data */}
                      {!isLoading && !calculationResult && !error && inputData.length > 0 && (
                         <p className="info-message">Nhấn "Tính Toán" để xem kết quả phân tích.</p>
                     )}
-                     {/* Thông báo khi chưa có data */}
                      {!isLoading && !calculationResult && !error && inputData.length === 0 && (
                         <p className="info-message">Vui lòng thêm dữ liệu lịch sử để bắt đầu.</p>
                     )}

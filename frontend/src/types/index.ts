@@ -1,5 +1,5 @@
 // frontend/src/types/index.ts
-export interface VanEntry extends Array<string> {} // ["ga tom bau", "ga cua nai"]
+export interface VanEntry extends Array<string> {} 
 
 export interface Mapping {
     [animal: string]: number;
